@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Bounce))]
 public class ChangeMassByInput : MonoBehaviour
 {
-    private float firstMass = 0.44f;
+    private float firstMass = 0.4f;
     private float secondMass = 0.48f;
     private float thirdMass = 0.8f;
     private float fourthMass = 10f;
@@ -62,7 +62,7 @@ public class ChangeMassByInput : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.KeypadEnter))
         {
-            bounce.BounceThis();
+            //bounce.BounceThis();
             rb.mass = originalMass;
         }
     }

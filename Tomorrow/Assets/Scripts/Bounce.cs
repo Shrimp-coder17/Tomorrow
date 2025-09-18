@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bounce : MonoBehaviour
 {
-    public string surfaceTag;
     public float bounciness = 5.0f;
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +18,7 @@ public class Bounce : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(surfaceTag))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Fly"))
         {
             BounceThis();
         }

@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 0
+  fromLeft: 0
 --- !u!1 &1063701623309176651
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ GameObject:
   - component: {fileID: 8784723851933583717}
   m_Layer: 6
   m_Name: Obstacle4Movable2
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 1
+  fromLeft: 0
 --- !u!1 &3413441117601816115
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +341,7 @@ GameObject:
   - component: {fileID: 5034956507309808255}
   m_Layer: 6
   m_Name: Obstacle4Movable3
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -500,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 1
+  fromLeft: 0
 --- !u!1 &5682512736772370443
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -3
+  fromLeft: 0
 --- !u!1 &6088253066983553856
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,6 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 0
+  fromLeft: 0
 --- !u!1 &7172928168936852383
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +718,7 @@ GameObject:
   - component: {fileID: 6013080851080199271}
   m_Layer: 6
   m_Name: Obstacle4Movable1
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,3 +879,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movable: 1
+  fromLeft: 0

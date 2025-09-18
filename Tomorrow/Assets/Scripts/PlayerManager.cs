@@ -76,6 +76,7 @@ public class PlayerManager : MonoBehaviour
         Time.timeScale = 1f;
         transform.position = new Vector3(0, 0, 0);
         isAlive = true;
+        levelBarManager.RestartSinBar();
         levelBarManager.RestartRevBar();
         sceneManagement.SetReviveScreen(false);
     }

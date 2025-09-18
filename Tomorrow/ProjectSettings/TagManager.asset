@@ -12,6 +12,8 @@ TagManager:
   - Orbs
   - LeftWall
   - RightWall
+  - Fly
+  - MovableObstacle
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - UI
   - Obstacle
   - Wall
-  - 
-  - 
+  - MovableObstacle
+  - Fly
   - 
   - 
   - 

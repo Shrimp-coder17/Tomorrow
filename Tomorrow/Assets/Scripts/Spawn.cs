@@ -10,8 +10,10 @@ public class Spawn : MonoBehaviour
     [SerializeField] private GameObject obstacle4;
     [SerializeField] private GameObject orbRevive;
     [SerializeField] private GameObject orbSin;
+    [SerializeField] private GameObject fly;
     private List<GameObject> obstacles = new List<GameObject>();
     private List<GameObject> orbs = new List<GameObject>();
+    private List<GameObject> flyers = new List<GameObject>();
     private GameObject obj;
     private float xPosObstacle = 12f;
     private float yPosObstacle = 0f;
@@ -19,6 +21,10 @@ public class Spawn : MonoBehaviour
     private float xPosOrbsMax = 25f;
     private float yPosOrbsMin = -3f;
     private float yPosOrbsMax = 3f;
+    private float xPosFlyMin = -8f;
+    private float xPosFlyMax = -25f;
+    private float yPosFlyMin = -3f;
+    private float yPosFlyMax = 3f;
     [SerializeField] private float timer = 0f;
     private float timeSpawnIntervals = 5f;
     private DayCounter dayCounter;
@@ -32,6 +38,7 @@ public class Spawn : MonoBehaviour
         obstacles.Add(obstacle3);
         orbs.Add(orbRevive);
         orbs.Add(orbSin);
+        flyers.Add(fly);
     }
 
     // Update is called once per frame
@@ -41,18 +48,26 @@ public class Spawn : MonoBehaviour
         addNewObstacles();
         if (timer >= timeSpawnIntervals)
         {
-            if(Random.Range(0, 2) == 1)
+            int randomSpawnNum = Random.Range(0, 3);
+            switch (randomSpawnNum)
             {
-                SpawnRandomFixedPos();
+                case 1:
+                    SpawnRandomFixedPos();
+                    break;
+                case 2:
+                    for (int x = 0; x<10; x++)
+                    {
+                        SpawnRandom(orbs, xPosOrbsMin, xPosOrbsMax, yPosOrbsMin, yPosOrbsMax);
+                    }
+                    break;
+                default:
+                    for (int x = 0; x<5; x++)
+                    {
+                        SpawnRandom(flyers, xPosFlyMin, xPosFlyMax, yPosFlyMin, yPosFlyMax);
+                    }
+                    break;
             }
-            else
-            {
-                for(int x = 0; x<10; x++)
-                {
-                    SpawnRandom();
-                }
-            } 
-            timer = 0;
+                timer = 0f;
         }
     }
 
@@ -60,14 +75,19 @@ public class Spawn : MonoBehaviour
     {
         int RandomIndex = Random.Range(0, obstacles.Count);
         obj = Instantiate(obstacles[RandomIndex]) as GameObject;
-        obj.transform.position = new Vector3(xPosObstacle, yPosObstacle, 0f);
+        obj.transform.position = new Vector3(xPosObstacle, yPosObstacle, 0f);   
     }
 
-    private void SpawnRandom()
+    private void SpawnRandom(List<GameObject> spawnList, float xMin, float xMax, float yMin, float yMax)
     {
-        int RandomIndex = Random.Range(0, orbs.Count);
-        obj = Instantiate(orbs[RandomIndex]) as GameObject;
-        obj.transform.position = RandomPos2D(xPosOrbsMin, xPosOrbsMax, yPosOrbsMin, yPosOrbsMax);
+        if (spawnList.Count == 0)
+        {
+            Debug.LogWarning("Spawn list is empty!");
+            return;
+        }
+        int randomIndex = Random.Range(0, spawnList.Count);
+        obj = Instantiate(spawnList[randomIndex]) as GameObject;
+        obj.transform.position = RandomPos2D(xMin, xMax, yMin, yMax);
     }
 
     private Vector3 RandomPos2D(float xMin, float xMax, float yMin, float yMax)

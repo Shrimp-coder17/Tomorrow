@@ -24,10 +24,20 @@ public class PlayerTrigger : MonoBehaviour
         }
         if (other.gameObject.CompareTag("SinOrb"))
         {
-            levelBarManager.SetSinBar();
+            levelBarManager.SetSinBar(15);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("FlyTrigger"))
+        {
+            levelBarManager.SetSinBar(25);
             Destroy(other.gameObject);
         }
     }
 
-   
 }
+
+
+
+
+   
+

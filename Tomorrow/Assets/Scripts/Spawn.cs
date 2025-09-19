@@ -67,7 +67,7 @@ public class Spawn : MonoBehaviour
                     }
                     break;
             }
-                timer = 0f;
+            timer = 0f;
         }
     }
 
@@ -106,7 +106,6 @@ public class Spawn : MonoBehaviour
                 obstacles.Add(obstacle4);
                 isAddedObstacleFour = true;
             }
-   
         }
     }
 }

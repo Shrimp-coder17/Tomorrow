@@ -4,6 +4,7 @@ public class Bounce : MonoBehaviour
 {
     public float bounciness = 5.0f;
     private Rigidbody2D rb;
+    [SerializeField] private Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,9 +19,19 @@ public class Bounce : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Fly"))
+        if (collision.gameObject.CompareTag("Floor"))
         {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+            anim.SetBool("IsSquash", true);
             BounceThis();
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            anim.SetBool("IsSquash", false);
         }
     }
 

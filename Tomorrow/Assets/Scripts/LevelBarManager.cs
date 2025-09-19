@@ -35,7 +35,7 @@ public class LevelBarManager : MonoBehaviour
 
     public void SetRevBar()
     {
-        revBar += 50;
+        revBar += 5;
         revBar = Mathf.Clamp(revBar, minBar, maxBar);
         revImage.fillAmount = revBar /100;
     }
@@ -46,10 +46,10 @@ public class LevelBarManager : MonoBehaviour
         revImage.fillAmount = 0;
     }
 
-    public void SetSinBar()
+    public void SetSinBar(float damage)
     {
         Debug.Log("SetSinBar");
-        sinBar += 5;
+        sinBar += damage;
         sinImage.fillAmount = sinBar /100;
     }
 

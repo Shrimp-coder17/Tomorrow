@@ -10,6 +10,7 @@ public class MoveAutomatic : MonoBehaviour
     private GameObject background;
     private DayCounter dayCounter;
     public bool fromLeft;
+    private float incrementSpeedFarTen = 0.5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,9 +34,9 @@ public class MoveAutomatic : MonoBehaviour
             {
                 speed = speedThree;
             }
-            else if (dayCounter.Day > 10)
+            else if(dayCounter.Day > 10)
             {
-                speed = speedFour;
+                speed = speedFour + (dayCounter.Day - 10) * incrementSpeedFarTen;
             }
         } 
     }

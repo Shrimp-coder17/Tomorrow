@@ -47,12 +47,14 @@ public class SceneManagement : MonoBehaviour
 
     public void Pause()
     {
+        Time.timeScale = 0f;
         pauseScreen.SetActive(true);
 
     }
 
     public void Return()
     {
+        Time.timeScale = 1f;
         pauseScreen.SetActive(false);
 
     }

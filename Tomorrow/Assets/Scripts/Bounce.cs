@@ -4,11 +4,19 @@ public class Bounce : MonoBehaviour
 {
     public float bounciness = 5.0f;
     private Rigidbody2D rb;
+    private AudioSource [] sounds;
+    [SerializeField] private bool isTouchFloor = false;
     [SerializeField] private Animator anim;
+
+    public bool IsTouchingFloor
+    {
+        get { return isTouchFloor; }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sounds = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +29,8 @@ public class Bounce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            isTouchFloor = true;
+            sounds[0].Play();
             transform.localEulerAngles = new Vector3(0, 0, 0);
             anim.SetBool("IsSquash", true);
             BounceThis();
@@ -31,6 +41,7 @@ public class Bounce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            isTouchFloor = false;
             anim.SetBool("IsSquash", false);
         }
     }

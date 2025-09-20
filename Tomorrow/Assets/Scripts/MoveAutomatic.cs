@@ -36,7 +36,7 @@ public class MoveAutomatic : MonoBehaviour
             }
             else if(dayCounter.Day > 10)
             {
-                speed = speedFour + (dayCounter.Day - 10) * incrementSpeedFarTen;
+                speed = speedFour - (dayCounter.Day - 10) * incrementSpeedFarTen;
             }
         } 
     }

@@ -62,7 +62,10 @@ public class ChangeMassByInput : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.KeypadEnter))
         {
-            //bounce.BounceThis();
+            if (bounce.IsTouchingFloor)
+            {
+                bounce.BounceThis();
+            }
             rb.mass = originalMass;
         }
     }

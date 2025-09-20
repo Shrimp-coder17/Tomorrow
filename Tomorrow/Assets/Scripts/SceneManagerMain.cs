@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class SceneManagerMain : MonoBehaviour
 {
+    private AudioSource buttonSounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        buttonSounds = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,9 +22,19 @@ public class SceneManagerMain : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void GoTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void ExitGame()
     {
         Debug.Log("Exiting game!");
         Application.Quit();
+    }
+
+    public void PlayButtonSounds()
+    {
+        buttonSounds.Play();
     }
 }

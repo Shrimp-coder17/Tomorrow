@@ -29,11 +29,10 @@ public class Bounce : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            isTouchFloor = true;
-            sounds[0].Play();
-            transform.localEulerAngles = new Vector3(0, 0, 0);
             anim.SetBool("IsSquash", true);
             BounceThis();
+            isTouchFloor = true;
+            transform.localEulerAngles = new Vector3(0, 0, 0);  
         }
     }
 

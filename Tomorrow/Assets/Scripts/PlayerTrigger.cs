@@ -29,13 +29,13 @@ public class PlayerTrigger : MonoBehaviour
         }
         if (other.gameObject.CompareTag("SinOrb"))
         {
-            PlaySoundsOrb();
+            PlaySinOrb();
             levelBarManager.SetSinBar(10);
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("FlyTrigger"))
         {
-            PlaySoundsOrb();
+            PlaySinOrb();
             levelBarManager.SetSinBar(15);
             Destroy(other.gameObject);
         }
@@ -45,6 +45,13 @@ public class PlayerTrigger : MonoBehaviour
     {
         sounds[1].Play();
     }
+
+    private void PlaySinOrb()
+    {
+        sounds[2].Play();
+    }
+
+
 
 }
 

@@ -12,6 +12,7 @@ public class Bounce : MonoBehaviour
     {
         get { return isTouchFloor; }
     }
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +33,7 @@ public class Bounce : MonoBehaviour
             anim.SetBool("IsSquash", true);
             BounceThis();
             isTouchFloor = true;
-            transform.localEulerAngles = new Vector3(0, 0, 0);  
+            transform.localEulerAngles = new Vector3(0, 0, 0);
         }
     }
 
@@ -48,11 +49,8 @@ public class Bounce : MonoBehaviour
     public void BounceThis()
     {
         Vector2 bounce = new Vector2(0, bounciness);
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        rb.linearVelocity = new Vector2(0, 0);
         rb.AddForce(bounce, ForceMode2D.Impulse);
     }
-
-    
-
 
 }

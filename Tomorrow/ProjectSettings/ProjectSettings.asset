@@ -44,6 +44,8 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 3642693161351926927, guid: bd664796ff0e5de46acecacb44dd6f81, type: 3}
     duration: 2
+  - logo: {fileID: 21300000, guid: 60f4378ed9b441246b30f3781c471bbb, type: 3}
+    duration: 2
   - logo: {fileID: -7201343354665831472, guid: 6fd3e74cc0fb3074891a576b06f1ebb6, type: 3}
     duration: 2
   - logo: {fileID: -8761724222940815613, guid: a32dbe3d42f630a4881270a243457f19, type: 3}
@@ -94,6 +96,7 @@ PlayerSettings:
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
+  audioSpatialExperience: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
@@ -140,6 +143,7 @@ PlayerSettings:
   switchNVNMaxPublicSamplerIDCount: 0
   switchMaxWorkerMultiple: 8
   switchNVNGraphicsFirmwareMemory: 32
+  switchGraphicsJobsSyncAfterKick: 1
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
   vulkanEnablePreTransform: 0
@@ -279,6 +283,9 @@ PlayerSettings:
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
+  androidAppCategory: 3
+  useAndroidAppCategory: 1
+  androidAppCategoryOther: 
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0

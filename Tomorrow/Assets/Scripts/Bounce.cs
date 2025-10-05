@@ -4,20 +4,16 @@ public class Bounce : MonoBehaviour
 {
     public float bounciness = 5.0f;
     private Rigidbody2D rb;
-    private AudioSource [] sounds;
     [SerializeField] private bool isTouchFloor = false;
     [SerializeField] private Animator anim;
-
     public bool IsTouchingFloor
     {
         get { return isTouchFloor; }
     }
-   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sounds = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
